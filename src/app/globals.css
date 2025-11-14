@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: radial-gradient(120% 120% at 50% 0%, #1e1b4b 0%, #0f172a 42%, #020617 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 24px rgba(250, 250, 255, 0.45);
+  }
+}
+
+.star-sparkle {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 35%, rgba(148, 163, 184, 0.05) 100%);
+  box-shadow: 0 0 16px rgba(236, 253, 245, 0.35);
+  animation-name: starTwinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  opacity: 0.28;
+}
+
+@keyframes starTwinkle {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.18;
+  }
+  35% {
+    transform: scale(1);
+    opacity: 0.42;
+  }
+  60% {
+    transform: scale(1.45);
+    opacity: 0.75;
+    box-shadow: 0 0 28px rgba(248, 250, 252, 0.8);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+}
+
+.sleigh-glide-right {
+  animation: sleighRight 36s linear infinite;
+}
+
+.sleigh-glide-left {
+  animation: sleighLeft 44s linear infinite;
+}
+
+.sleigh-glide-arc {
+  animation: sleighArc 52s ease-in-out infinite;
+}
+
+@keyframes sleighRight {
+  0% {
+    transform: translate(-28%, -6%) scale(0.86);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  45% {
+    transform: translate(110%, 4%) scale(1.03);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(260%, -8%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes sleighLeft {
+  0% {
+    transform: translate(28%, 6%) scale(0.92);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  52% {
+    transform: translate(-120%, -2%) scale(1.06);
+    opacity: 1;
+  }
+  82% {
+    opacity: 0.88;
+  }
+  100% {
+    transform: translate(-265%, 10%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes sleighArc {
+  0% {
+    transform: translate(-20%, 14%) scale(0.82) rotate(-4deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.7;
+  }
+  40% {
+    transform: translate(80%, -8%) scale(1.12) rotate(2deg);
+    opacity: 0.95;
+  }
+  78% {
+    transform: translate(160%, 12%) scale(0.96) rotate(-2deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(240%, -24%) scale(0.8) rotate(4deg);
+    opacity: 0;
+  }
+}
